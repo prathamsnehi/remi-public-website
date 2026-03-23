@@ -17,14 +17,14 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl lg:text-7xl font-bold leading-tight font-rounded text-foreground"
+            className="text-5xl lg:text-7xl font-bold leading-none font-rounded text-foreground flex flex-col"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Remi: <br />
-            <span className="text-4xl lg:text-5xl text-muted-foreground font-sans">
-              Memory Bank
+            <span>remi:</span>
+            <span className="text-4xl lg:text-5xl text-primary font-sans lg:-mt-1">
+              memory bank
             </span>
           </motion.h1>
 

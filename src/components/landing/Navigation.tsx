@@ -36,7 +36,7 @@ export const Navigation = () => {
               alt="Remi Logo"
               className="w-8 h-8 rounded-full object-cover shadow-sm"
             />
-            <span className="text-xl font-bold font-rounded">Remi</span>
+            <span className="text-xl font-bold font-rounded">remi</span>
           </motion.div>
 
           {/* Desktop Navigation */}
