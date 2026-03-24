@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden bg-background">
+    <section id="cta" className="py-24 px-4 relative overflow-hidden bg-background">
       <div className="container max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

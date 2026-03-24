@@ -130,7 +130,7 @@ export const AppShowcase = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="relative z-10 w-full max-w-xs mx-auto rounded-[2rem]"
+                    className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-[2rem]"
                   />
                 </div>
               </motion.div>

@@ -89,7 +89,7 @@ export const Hero = () => {
             <motion.img
               src={appShowcase}
               alt="Remi App Dashboard"
-              className="relative z-10 max-w-sm sm:max-w-md w-full rounded-[2.5rem] transition-transform duration-500"
+              className="relative z-10 max-w-sm sm:max-w-md lg:max-w-xl xl:max-w-2xl w-full rounded-[2.5rem] transition-transform duration-500"
             />
           </div>
         </motion.div>

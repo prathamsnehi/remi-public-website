@@ -47,7 +47,7 @@ export const Navigation = () => {
             <Button
               className="bg-primary hover:bg-primary/90 rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded text-white"
               onClick={() => {
-                scrollToSection("showcase");
+                scrollToSection("cta");
               }}
             >
               <Sparkle className="h-4 w-4 mr-2" />
@@ -85,10 +85,7 @@ export const Navigation = () => {
                 <Button
                   className="w-full bg-primary hover:bg-primary/90 rounded-full font-rounded text-white"
                   onClick={() => {
-                    const footer = document.querySelector("footer");
-                    if (footer) {
-                      footer.scrollIntoView({ behavior: "smooth" });
-                    }
+                    scrollToSection("cta");
                   }}
                 >
                   <Download className="mr-2 h-4 w-4" />

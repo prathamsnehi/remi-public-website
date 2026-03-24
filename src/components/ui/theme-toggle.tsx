@@ -23,7 +23,7 @@ export const ThemeToggle = () => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <Sun className="h-5 w-5 text-blue-500" />
+        <Sun className="h-5 w-5 text-primary" />
       </motion.div>
 
       <motion.div
@@ -36,7 +36,7 @@ export const ThemeToggle = () => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <Moon className="h-5 w-5 text-yellow-400" />
+        <Moon className="h-5 w-5 text-primary" />
       </motion.div>
 
       {/* Animated background */}
