@@ -4,16 +4,31 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Download, Menu, Sparkle } from "lucide-react";
 import icon from "@/assets/icon.png";
 import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+    // If not on the homepage, go home first, then scroll (or just go to the link logic if needed)
+    // For now we'll just handle it gracefully
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -26,31 +41,41 @@ export const Navigation = () => {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-3"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <img
-              src={icon}
-              alt="Remi Logo"
-              className="w-8 h-8 rounded-full object-cover"
-            />
-            <span className="text-xl font-bold font-rounded">remi</span>
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              className="flex items-center gap-3"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <img
+                src={icon}
+                alt="Remi Logo"
+                className="w-8 h-8 rounded-full object-cover"
+              />
+              <span className="text-xl font-bold font-rounded">remi</span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8"></div>
+          <div className="hidden md:flex items-center gap-8">
+          </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
+            <Link to="/support">
+              <Button
+                variant="outline"
+                className="rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded"
+              >
+                Support
+              </Button>
+            </Link>
             <Button
               className="bg-primary hover:bg-primary/90 rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded text-white"
               onClick={() => {
                 scrollToSection("cta");
               }}
             >
-              <Sparkle className="h-4 w-4 mr-2" />
               Get Remi
             </Button>
             <ThemeToggle />
@@ -70,25 +95,32 @@ export const Navigation = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
-            className="md:hidden border-t bg-background/95 backdrop-blur-sm"
+            className="md:hidden border-t bg-background/95 backdrop-blur-sm shadow-xl rounded-b-2xl"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="py-4 space-y-3">
-              <div className="px-4 pt-2 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium font-rounded">Theme</span>
-                  <ThemeToggle />
-                </div>
+            <div className="py-4 px-4 space-y-3">
+              <div className="flex items-center justify-between mx-2">
+                <span className="text-sm font-medium font-rounded">Theme</span>
+                <ThemeToggle />
+              </div>
+              <div className="space-y-3 pt-2">
+                <Link to="/support" onClick={() => setIsMenuOpen(false)}>
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded mb-3"
+                  >
+                    Support
+                  </Button>
+                </Link>
                 <Button
-                  className="w-full bg-primary hover:bg-primary/90 rounded-full font-rounded text-white"
+                  className="w-full bg-primary hover:bg-primary/90 shadow-md rounded-full font-rounded text-white"
                   onClick={() => {
                     scrollToSection("cta");
                   }}
                 >
-                  <Download className="mr-2 h-4 w-4" />
                   Get Remi
                 </Button>
               </div>
