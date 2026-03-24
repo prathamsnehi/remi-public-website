@@ -65,13 +65,13 @@ export const Navigation = () => {
             <Link to="/support">
               <Button
                 variant="outline"
-                className="rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded"
+                className="rounded-full shadow-sm hover:shadow-md transition-[box-shadow,transform] duration-300 font-rounded"
               >
                 Support
               </Button>
             </Link>
             <Button
-              className="bg-primary hover:bg-primary/90 rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded text-white"
+              className="bg-primary hover:bg-primary/90 rounded-full shadow-sm hover:shadow-md transition-[box-shadow,transform] duration-300 font-rounded text-white"
               onClick={() => {
                 scrollToSection("cta");
               }}
@@ -110,7 +110,7 @@ export const Navigation = () => {
                 <Link to="/support" onClick={() => setIsMenuOpen(false)}>
                   <Button
                     variant="outline"
-                    className="w-full rounded-full shadow-sm hover:shadow-md transition-all duration-300 font-rounded mb-3"
+                    className="w-full rounded-full shadow-sm hover:shadow-md transition-[box-shadow,transform] duration-300 font-rounded mb-3"
                   >
                     Support
                   </Button>

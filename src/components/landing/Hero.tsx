@@ -53,7 +53,7 @@ export const Hero = () => {
             >
               <Button
                 size="lg"
-                className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 font-rounded text-white"
+                className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-[box-shadow,transform] duration-300 hover:scale-105 font-rounded text-white"
               >
                 <ion-icon
                   name="logo-apple"

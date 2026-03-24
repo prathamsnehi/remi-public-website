@@ -58,7 +58,7 @@ export const CTA = () => {
             >
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 font-rounded"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-6 rounded-full shadow-md hover:shadow-lg transition-[box-shadow,transform] duration-300 hover:scale-105 font-rounded"
               >
                 <ion-icon
                   name="logo-apple"
