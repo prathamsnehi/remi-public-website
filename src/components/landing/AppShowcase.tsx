@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import appChat from "@/assets/mockups/app-chat.png";
-import appSocial from "@/assets/mockups/app-social.png";
-import appDashboard from "@/assets/mockups/app-dashboard.png";
+import appHomepage from "@/assets/mockups/app-homepage.png";
+import appFaceScan from "@/assets/mockups/app-face-scan.png";
+import appMemories from "@/assets/mockups/app-memories.png";
 
 const showcaseItems = [
   {
     title: "Be the Person Who Remembers",
     description:
-      "Remi bridges the gap between meeting someone and truly knowing them. \"Refreshing your memory\" takes seconds, helping you transform everyday acquaintances into deep, thoughtful connections.",
-    image: appChat,
+      "Transform everyday acquaintances into deep, thoughtful connections in seconds.",
+    image: appHomepage,
     icon: "person",
     features: [
       "External brain for social life",
@@ -21,8 +21,8 @@ const showcaseItems = [
   {
     title: "Instant Search",
     description:
-      "Life moves fast. Remi's Instant Search ensures every detail—from professional preferences to personal anecdotes—is always at your fingertips. No more awkward pauses.",
-    image: appSocial,
+      "Every detail is always at your fingertips. No more awkward pauses or forgotten contexts.",
+    image: appFaceScan,
     icon: "search",
     features: ["Lightning fast search", "Always at your fingertips", "No more awkward pauses"],
     gradient: "from-primary/60 to-primary/80",
@@ -30,8 +30,8 @@ const showcaseItems = [
   {
     title: "Show You Truly Care",
     description:
-      "Remembering specific details sends a powerful message: I was listening. Remi helps you honor the people in your life by turning fleeting conversations into lasting impressions.",
-    image: appDashboard,
+      "Show people you truly care by turning fleeting conversations into lasting impressions.",
+    image: appMemories,
     icon: "heart",
     features: ["Tools for thoughtfulness", "Honor people in your life", "Turn conversations into impressions"],
     gradient: "from-primary/80 to-primary",
@@ -78,11 +78,11 @@ export const AppShowcase = () => {
             >
               {/* Content */}
               <div
-                className={`space-y-6 ${
+                className={`flex flex-col items-center text-center lg:items-start lg:text-left space-y-6 ${
                   index % 2 === 1 ? "lg:col-start-2" : ""
                 }`}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col lg:flex-row items-center gap-4">
                   <div
                     className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} p-3 shadow-md flex items-center justify-center`}
                   >
@@ -99,7 +99,7 @@ export const AppShowcase = () => {
                   {item.description}
                 </p>
 
-                <div className="space-y-3 pt-2">
+                <div className="space-y-3 pt-2 mx-auto lg:mx-0 w-max text-left">
                   {item.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
@@ -130,7 +130,7 @@ export const AppShowcase = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="relative z-10 w-full max-w-xs mx-auto rounded-[2rem] shadow-xl border border-black/5"
+                    className="relative z-10 w-full max-w-xs mx-auto rounded-[2rem]"
                   />
                 </div>
               </motion.div>

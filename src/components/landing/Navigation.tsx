@@ -34,7 +34,7 @@ export const Navigation = () => {
             <img
               src={icon}
               alt="Remi Logo"
-              className="w-8 h-8 rounded-full object-cover shadow-sm"
+              className="w-8 h-8 rounded-full object-cover"
             />
             <span className="text-xl font-bold font-rounded">remi</span>
           </motion.div>

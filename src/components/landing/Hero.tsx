@@ -34,8 +34,8 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Be the person who remembers the small things. Remi is your external brain for social connections—capturing the nuances that matter so you can walk into any room with total confidence.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+              Your external brain for social life. Capture the details that matter and walk into any room with total confidence.
             </p>
           </motion.div>
 
@@ -89,7 +89,7 @@ export const Hero = () => {
             <motion.img
               src={appShowcase}
               alt="Remi App Dashboard"
-              className="relative z-10 max-w-sm sm:max-w-md w-full rounded-[2.5rem] shadow-2xl border border-white/20 transition-transform duration-500"
+              className="relative z-10 max-w-sm sm:max-w-md w-full rounded-[2.5rem] transition-transform duration-500"
             />
           </div>
         </motion.div>

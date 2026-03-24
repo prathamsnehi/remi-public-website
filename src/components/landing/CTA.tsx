@@ -35,13 +35,13 @@ export const CTA = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-xl text-muted-foreground max-w-lg mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Our happiness is defined by the quality of our connections. Remi removes the friction of staying in touch, letting you master the small details and build meaningful relationships that stand the test of time.
+            Master the subtle details and build meaningful relationships that stand the test of time.
           </motion.p>
 
           <motion.div
