@@ -52,7 +52,7 @@ export const CTA = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <a
-              href="https://apps.apple.com/us/app/remi-memory-bank/id123456789"
+              href="https://apps.apple.com/us/app/remi-memory-bank/id6757212316"
               target="_blank"
               rel="noopener noreferrer"
             >
