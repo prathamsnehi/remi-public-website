@@ -14,12 +14,7 @@ export const SupportOptions = () => {
   const [file, setFile] = useState<File | null>(null);
 
   const submitToWebhook = async (payload: any) => {
-    // You must add VITE_WEBHOOK_URL to your .env or paste the URL below!
-    const webhookUrl = import.meta.env.VITE_WEBHOOK_URL || "undefined";
-    
-    if (webhookUrl === "undefined") {
-      throw new Error("Webhook URL is not configured yet.");
-    }
+    const webhookUrl = import.meta.env.FIREBASE_WEBHOOK_URL || "https://us-central1-remi-public.cloudfunctions.net/submitFeedback";
 
     const response = await fetch(webhookUrl, {
       method: "POST",
