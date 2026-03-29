@@ -36,7 +36,8 @@ export const SupportOptions = () => {
       const payload = {
         email: formData.get("email") || "",
         type: "Feature Request",
-        description: `Title: ${formData.get("title")}\n\n${formData.get("desc")}`,
+        summary: formData.get("title") || "",
+        description: `${formData.get("desc")}`,
         fileUrl: ""
       };
       
@@ -70,7 +71,8 @@ export const SupportOptions = () => {
       const payload = {
         email: formData.get("email") || "",
         type: "Bug Report",
-        description: `Title: ${formData.get("title")}\nDevice: ${formData.get("device")}\nSteps:\n${formData.get("steps")}`,
+        summary: formData.get("title") || "",
+        description: `Device: ${formData.get("device")}\n\nSteps to Reproduce:\n${formData.get("steps")}`,
         fileUrl: fileUrl
       };
       

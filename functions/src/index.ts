@@ -32,7 +32,7 @@ export const submitFeedback = onRequest(
       }
 
       try {
-        const { email, type, description, fileUrl } = req.body;
+        const { email, type, summary, description, fileUrl } = req.body;
         
         const apiKey = airtableApiKey.value();
         const baseId = airtableBaseId.value();
@@ -54,6 +54,7 @@ export const submitFeedback = onRequest(
                 fields: {
                   "Email": email || "",
                   "Type": type || "",
+                  "Summary": summary || "",
                   "Description": description || "",
                   ...(fileUrl ? { "Additional Info": fileUrl } : {})
                 }
