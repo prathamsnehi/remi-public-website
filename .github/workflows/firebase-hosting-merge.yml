@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 22
       - name: Install Frontend Dependencies and Build
-      - run: yarn install --frozen-lockfile && yarn build
+        run: yarn install --frozen-lockfile && yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
