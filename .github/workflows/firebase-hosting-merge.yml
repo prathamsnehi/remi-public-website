@@ -18,3 +18,14 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REMI_PUBLIC }}
           channelId: live
           projectId: remi-public
+
+      - name: Install Cloud Functions Dependencies
+        run: cd functions && yarn install --frozen-lockfile
+
+      - name: Deploy Functions and Storage Rules
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only functions,storage
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REMI_PUBLIC }}
+          PROJECT_ID: remi-public

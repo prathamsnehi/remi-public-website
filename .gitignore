@@ -28,3 +28,5 @@ vite-env.d.ts
 
 # Firebase
 .firebase
+
+.env

@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /bugs/{fileName} {
+      // Security: Only allow uploading if file is < 10MB and is specifically an image or video
+      allow create: if request.resource.size < 10 * 1024 * 1024
+                    && request.resource.contentType.matches('image/.*|video/.*');
+      
+      // Allow unrestricted reading so that your Airtable links are perfectly viewable
+      allow read: if true;
+      
+      // Explicitly block arbitrary over-writes and deletions to prevent data tampering
+      allow update, delete: if false;
+    }
+  }
+}
