@@ -6,75 +6,71 @@ import appMemories from "@/assets/mockups/app-memories.png";
 
 const showcaseItems = [
   {
-    title: "Be the Person Who Remembers",
+    title: "Restoring Autonomy for Patients",
     description:
-      "Transform everyday acquaintances into deep, thoughtful connections in seconds.",
-    image: appHomepage,
+      "Dementia patients can identify faces using Remi's facial scan feature and access memories associated with them, transforming strange stares into warm and loving interactions.",
+    image: appFaceScan,
     icon: "person",
     features: [
-      "External brain for social life",
-      "Bridge the gap to knowing",
-      "Refresh memory in seconds",
+      "AI Face Recognition",
+      "Instant memory retrieval",
+      "Sense of control",
     ],
     gradient: "from-primary/80 to-primary",
   },
   {
-    title: "Instant Search",
+    title: "Healing the Connection for Loved Ones",
     description:
-      "Every detail is always at your fingertips. No more awkward pauses or forgotten contexts.",
-    image: appFaceScan,
-    icon: "search",
-    features: ["Lightning fast search", "Always at your fingertips", "No more awkward pauses"],
+      "Remi mitigates the chronic emotional toll on caregivers. By bridging the recognition gap, loved ones spend time actually connecting rather than constantly re-introducing themselves.",
+    image: appMemories,
+    icon: "heart",
+    features: ["Reduces emotional toll", "Meaningful interactions", "No more re-introductions"],
     gradient: "from-primary/60 to-primary/80",
   },
   {
-    title: "Show You Truly Care",
+    title: "Accessible by Design",
     description:
-      "Show people you truly care by turning fleeting conversations into lasting impressions.",
-    image: appMemories,
-    icon: "heart",
-    features: ["Tools for thoughtfulness", "Honor people in your life", "Turn conversations into impressions"],
+      "Designed with Hick's Law and motor limitations of the elderly in mind. Features a highly minimalist interface with large touch targets and comprehensive voiceover support.",
+    image: appHomepage,
+    icon: "accessibility",
+    features: ["Minimalist UI (Hick's Law)", "Large touch targets", "Full Voiceover support"],
     gradient: "from-primary/80 to-primary",
   },
 ];
 
 export const AppShowcase = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-24 px-4 bg-surface">
       <div className="container max-w-6xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Badge className="mb-4 px-4 py-2 text-sm font-medium bg-primary/10 text-primary border-none rounded-full">
-            The Remi Experience
+          <Badge className="mb-6 px-4 py-2 text-sm font-medium bg-primary/10 text-primary border-none rounded-full">
+            Purpose & Philosophy
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-rounded">
-            Transform from a passive acquaintance to a
-            <span className="text-primary">
-              {" "}
-              thoughtful connection
-            </span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-rounded tracking-tight">
+            Bridging the Recognition Gap
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Remi isn't about tracking data; it's about honoring the people in your life.
+            Remi is built to provide psychological relief to patients suffering from dementia, as well as their devoted loved ones.
           </p>
         </motion.div>
 
-        <div className="space-y-24">
+        <div className="space-y-32">
           {showcaseItems.map((item, index) => (
             <motion.div
               key={index}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-16 items-center ${
                 index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
               {/* Content */}
               <div
@@ -82,35 +78,35 @@ export const AppShowcase = () => {
                   index % 2 === 1 ? "lg:col-start-2" : ""
                 }`}
               >
-                <div className="flex flex-col lg:flex-row items-center gap-4">
+                <div className="flex flex-col lg:flex-row items-center gap-5">
                   <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} p-3 shadow-md flex items-center justify-center`}
+                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} p-3 shadow-lg flex items-center justify-center`}
                   >
                     <ion-icon
                       name={item.icon}
                       class="text-white"
-                      style={{ fontSize: "1.5rem" }}
+                      style={{ fontSize: "1.75rem" }}
                     ></ion-icon>
                   </div>
-                  <h3 className="text-3xl font-bold font-rounded">{item.title}</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold font-rounded tracking-tight">{item.title}</h3>
                 </div>
 
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
 
-                <div className="space-y-3 pt-2 mx-auto lg:mx-0 w-max text-left">
+                <div className="space-y-4 pt-4 mx-auto lg:mx-0 w-max text-left">
                   {item.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
-                      className="flex items-center gap-3"
+                      className="flex items-center gap-4"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.3 + featureIndex * 0.1 }}
+                      transition={{ delay: 0.2 + featureIndex * 0.1 }}
                     >
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-foreground font-medium">
+                      <span className="text-lg text-foreground font-medium">
                         {feature}
                       </span>
                     </motion.div>
@@ -120,18 +116,19 @@ export const AppShowcase = () => {
 
               {/* Image */}
               <motion.div
-                className={`relative ${
+                className={`relative flex justify-center ${
                   index % 2 === 1 ? "lg:col-start-1" : ""
                 }`}
                 whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4 }}
               >
                 <div className="relative">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="relative z-10 w-full max-w-xs sm:max-w-sm mx-auto rounded-[2rem]"
+                    className="relative z-10 w-full max-w-xs sm:max-w-sm rounded-[2.5rem] shadow-2xl border border-border/50"
                   />
+                  <div className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-primary/5 to-transparent blur-2xl transform scale-105" />
                 </div>
               </motion.div>
             </motion.div>

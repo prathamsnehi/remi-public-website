@@ -1,6 +1,9 @@
 import { Navigation } from "@/components/landing/Navigation";
 import { Hero } from "@/components/landing/Hero";
+import { SSCWinner } from "@/components/landing/SSCWinner";
 import { AppShowcase } from "@/components/landing/AppShowcase";
+import { Technology } from "@/components/landing/Technology";
+import { Impact } from "@/components/landing/Impact";
 import { CTA } from "@/components/landing/CTA";
 
 const Index = () => {
@@ -10,19 +13,16 @@ const Index = () => {
 
       <main>
         <Hero />
+        <SSCWinner />
         <section id="showcase">
           <AppShowcase />
         </section>
-        {/* <section id="features">
-          <Features />
-        </section> */}
-        {/* <section id="testimonials">
-          <Testimonials />
-        </section> */}
+        <Technology />
+        <Impact />
         <CTA />
       </main>
 
-      <footer className="bg-surface py-8 px-4 border-t">
+      <footer className="bg-surface py-8 px-4 border-t border-border/50">
         <div className="container max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
